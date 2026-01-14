@@ -106,9 +106,9 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Reservation/>} />
         <Route path={"/contact"} element={<Contact/>} />
-        <Route path= {"*"} element= {<NotFound/>} />
         <Route path={"/services"} element={<Services/>}/>
-        <Route path='/servises/:id' element={<serviceDetaile/>} />
+        <Route path="/servicedetails/:id" element={<servicedetaile/>} />
+        <Route path= {"*"} element= {<NotFound/>} />
       </Routes>
 
     </BrowserRouter>

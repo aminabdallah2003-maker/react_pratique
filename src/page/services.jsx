@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
   const styles = `
@@ -347,23 +348,23 @@ const Services = () => {
   `
 
   const services = [
-    { icon: '🛏️', title: 'Chambres Confortables', description: 'Des chambres spacieuses et bien équipées pour votre confort' },
-    { icon: '🍽️', title: 'Restaurant & Bar', description: 'Cuisine locale et internationale dans un cadre élégant' },
-    { icon: '🏊', title: 'Piscine', description: 'Profitez de notre belle piscine climatisée' },
-    { icon: '🧘', title: 'Spa & Wellness', description: 'Massages et soins de relaxation pour votre bien-être' },
-    { icon: '🎾', title: 'Salle de Sport', description: 'Équipements modernes pour vos entraînements' },
-    { icon: '📶', title: 'WiFi Gratuit', description: 'Connexion internet haut débit dans tout l\'établissement' },
+    { id: 1, icon: '🛏️', title: 'Chambres Confortables', description: 'Des chambres spacieuses et bien équipées pour votre confort' },
+    { id: 2, icon: '🍽️', title: 'Restaurant & Bar', description: 'Cuisine locale et internationale dans un cadre élégant' },
+    { id: 3, icon: '🏊', title: 'Piscine', description: 'Profitez de notre belle piscine climatisée' },
+    { id: 4, icon: '🧘', title: 'Spa & Wellness', description: 'Massages et soins de relaxation pour votre bien-être' },
+    { id: 5, icon: '🎾', title: 'Salle de Sport', description: 'Équipements modernes pour vos entraînements' },
+    { id: 6, icon: '📶', title: 'WiFi Gratuit', description: 'Connexion internet haut débit dans tout l\'établissement' },
   ]
 
   const amenities = [
-    { icon: '🚗', name: 'Parking gratuit' },
-    { icon: '🛏️', name: 'Lits King Size' },
-    { icon: '❄️', name: 'Climatisation' },
-    { icon: '📺', name: 'Télévision écran plat' },
-    { icon: '☕', name: 'Mini-bar' },
-    { icon: '🛁', name: 'Salle de bain privée' },
-    { icon: '🔐', name: 'Coffre-fort' },
-    { icon: '🎫', name: 'Service de concierge' },
+    { id: 1, icon: '🚗', name: 'Parking gratuit' },
+    { id: 2, icon: '🛏️', name: 'Lits King Size' },
+    { id: 3, icon: '❄️', name: 'Climatisation' },
+    { id: 4, icon: '📺', name: 'Télévision écran plat' },
+    { id: 5, icon: '☕', name: 'Mini-bar' },
+    { id: 6, icon: '🛁', name: 'Salle de bain privée' },
+    { id: 7, icon: '🔐', name: 'Coffre-fort' },
+    { id: 8, icon: '🎫', name: 'Service de concierge' },
   ]
 
   return (
@@ -377,22 +378,24 @@ const Services = () => {
 
         <div className="services-content">
           <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <div className="service-icon">{service.icon}</div>
-                <div className="service-info">
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+            {services.map((service) => (
+              <Link key={service.id} to={`/servicedetails/${service.id}`} style={{ textDecoration: 'none' }}>
+                <div className="service-card">
+                  <div className="service-icon">{service.icon}</div>
+                  <div className="service-info">
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
           <div className="amenities-section">
             <h2>Équipements & Commodités</h2>
             <div className="amenities-list">
-              {amenities.map((amenity, index) => (
-                <div key={index} className="amenity-item">
+              {amenities.map((amenity) => (
+                <div key={amenity.id} className="amenity-item">
                   <span>{amenity.icon}</span>
                   <p>{amenity.name}</p>
                 </div>
