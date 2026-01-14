@@ -4,7 +4,7 @@ import Reservation from './page/reservation.jsx'
 import Contact from './page/contact.jsx'
 import NotFound from './page/NotFound.jsx'
 import Services from './page/services.jsx'
-import servicedetaile from './page/servicedetaile.jsx'
+import Servicedetaile from './page/servicedetaile.jsx'
 
 function App() {
   const navStyles = `
@@ -107,7 +107,7 @@ function App() {
         <Route path={"/"} element={<Reservation/>} />
         <Route path={"/contact"} element={<Contact/>} />
         <Route path={"/services"} element={<Services/>}/>
-        <Route path="/servicedetails/:id" element={<servicedetaile/>} />
+        <Route path="/servicedetails/:id" element={<Servicedetaile/>} />
         <Route path= {"*"} element= {<NotFound/>} />
       </Routes>
 

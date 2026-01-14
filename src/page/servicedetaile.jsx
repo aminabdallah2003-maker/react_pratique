@@ -217,33 +217,8 @@ const ServiceDetails = () => {
   `
 
   return (
-    <div className="service-details-container">
-      <style>{styles}</style>
-      
-      <Link to="/services" className="back-link">
-        ← Retour aux services
-      </Link>
-
-      <div className="details-header">
-        <span className="details-icon">{service.icon}</span>
-        <h1>{service.title}</h1>
-        <p>{service.description}</p>
-      </div>
-
-      <div className="details-content">
-        <p className="details-text">{service.details}</p>
-
-        <h2 className="amenities-title">Ce que vous obtenez :</h2>
-        <div className="amenities-items">
-          {service.amenities.map((amenity, index) => (
-            <div key={index} className="amenity-card">
-              {amenity}
-            </div>
-          ))}
-        </div>
-
-        <Link to="/" className="book-btn">Réserver Maintenant</Link>
-      </div>
+    <div>
+        <h1> {id} </h1>
     </div>
   )
 }
