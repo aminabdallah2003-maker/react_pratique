@@ -1,0 +1,129 @@
+body{
+    background:linear-gradient(180deg,rgb(116, 96, 231), rgb(112, 51, 209));
+    margin: 0;
+    padding: 20px;
+
+
+}
+input{
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+label{
+    font-weight: bold;
+    display: block;
+}
+.btn_submit{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn_submit:hover{ 
+    background-color: #37853b;
+}
+select{
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 320px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgb(223, 221, 221);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+    
+   
+}
+
+/* Styles pour la liste des réservations */
+.formulaire + div{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 720px;
+}
+.formulaire + div > div{
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+.formulaire + div > div p{
+    margin: 0;
+    color: #333333;
+    font-size: 14px;
+}
+.formulaire + div > div p:first-child{
+    font-weight: 600;
+    font-size: 15px;
+}
+.formulaire + div > div p:nth-child(2){
+    color: #555555;
+    font-size: 13px;
+}
+@media (max-width: 600px){
+    .formulaire + div > div{
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+/* Boutons supplémentaires: btn1 (primaire) et btn2 (secondaire) */
+.btn1{
+    background: linear-gradient(180deg,#2e8b57,#1f6b42);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(46,139,87,0.12);
+}
+.btn1:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(46,139,87,0.18);
+}
+.btn2{
+    background: linear-gradient(180deg,rgb(187, 138, 47), orange);
+    color: #fcfcfc;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #cfeadf;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn3{
+    background: linear-gradient(180deg,rgb(231, 96, 96), rgb(197, 63, 63));
+    color: #fcfcfc;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #cfeadf;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* States désactivés */
+.btn1:disabled, .btn2:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
