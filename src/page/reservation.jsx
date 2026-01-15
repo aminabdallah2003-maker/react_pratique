@@ -46,10 +46,7 @@ function Reservation() {
 
   return (
     <>
-    <Link to={"/"}>Accueil </Link> <br />
-    <Link to={"/contact"}>contact</Link>
-    <Link to={"/services"}>service</Link>
-
+   
     <h2>formulaire de reservation</h2>
     <div className="formulaire">
       <label htmlFor="nom">Nom Complet</label><br />

@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     },
     {
       id: 2,
-      icon: '🍽️',
+      icon: '',
       title: 'Restaurant & Bar',
       description: 'Cuisine locale et internationale dans un cadre élégant',
       details: 'Notre restaurant propose une cuisine raffinée mêlant saveurs locales et spécialités internationales. Nos chefs cuisinent avec des produits frais et de qualité.',
@@ -64,7 +64,8 @@ const ServiceDetails = () => {
   const styles = `
     .service-details-container {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(180deg, #f8f9ff 0%, #f0f4ff 100%);
+      background: transparent rgba(245, 245, 245, 0.8);
+      backdrop-filter: blur(10px);
       min-height: 100vh;
       padding: 40px 20px;
     }
@@ -86,7 +87,8 @@ const ServiceDetails = () => {
     }
 
     .details-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: transparent rgba(102, 126, 234, 0.8);
+      backdrop-filter: blur(5px);
       color: white;
       padding: 60px 40px;
       border-radius: 20px;
@@ -147,7 +149,8 @@ const ServiceDetails = () => {
     }
 
     .amenity-card {
-      background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+      background: transparent rgba(102, 126, 234, 0.8);
+      backdrop-filter: blur(5px);
       padding: 20px;
       border-radius: 12px;
       border-left: 5px solid #667eea;
@@ -169,7 +172,8 @@ const ServiceDetails = () => {
 
     .book-btn {
       display: inline-block;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: transparent rgba(102, 126, 234, 0.8);
+      backdrop-filter: blur(5px);
       color: white;
       padding: 16px 50px;
       border: none;

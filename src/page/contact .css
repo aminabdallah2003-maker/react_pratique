@@ -5,7 +5,8 @@
 }
 
 .contact-container {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: transparent rgba(102, 126, 234, 0.8);
+  backdrop-filter: blur(5px);;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -15,7 +16,8 @@
 }
 
 .contact-content {
-  background: white;
+  background: transparent rgba(102, 126, 234, 0.8);
+  backdrop-filter: blur(5px);
   border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   max-width: 600px;
@@ -24,13 +26,13 @@
 }
 
 .contact-content h1 {
-  color: #333;
+  color: rgb(87, 4, 243);
   margin-bottom: 10px;
   font-size: 28px;
 }
 
 .contact-content > p {
-  color: #666;
+  color: #442ec0;
   margin-bottom: 30px;
   font-size: 14px;
 }
@@ -86,8 +88,9 @@
 }
 
 button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: transparent rgba(102, 126, 234, 0.8);
+   backdrop-filter: blur(5px);
+  color: rgb(87, 4, 243);
   padding: 14px 30px;
   border: none;
   border-radius: 5px;

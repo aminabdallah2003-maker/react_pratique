@@ -16,7 +16,7 @@ const Services = () => {
     }
 
     .services-header {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
       color: white;
       padding: 80px 20px;
       text-align: center;
@@ -29,7 +29,7 @@ const Services = () => {
       position: absolute;
       width: 300px;
       height: 300px;
-      background: rgba(255, 255, 255, 0.1);
+      background: transparent rgba(255, 255, 255, 0.1);
       border-radius: 50%;
       top: -50px;
       right: -50px;
@@ -111,7 +111,7 @@ const Services = () => {
     }
 
     .service-icon {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8fDA%3D&w=1000&q=80');
       color: white;
       height: 180px;
       display: flex;
@@ -406,7 +406,7 @@ const Services = () => {
           <div className="contact-section">
             <h2>Des questions sur nos services ?</h2>
             <p>Notre équipe est à votre disposition pour vous aider</p>
-            <button className="contact-btn">Nous contacter</button>
+            <button className="contact-btn" onClick={() => window.location.href = '/contact' } >Nous contacter</button>
           </div>
         </div>
       </div>

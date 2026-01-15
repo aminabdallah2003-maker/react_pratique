@@ -5,6 +5,8 @@ import Contact from './page/contact.jsx'
 import NotFound from './page/NotFound.jsx'
 import Services from './page/services.jsx'
 import Servicedetaile from './page/servicedetaile.jsx'
+import hotelLogo from './assets/hotel-logo-ideas-1.jpg';
+import reactIcon from './assets/react.svg';
 
 function App() {
   const navStyles = `
@@ -13,9 +15,13 @@ function App() {
       padding: 0;
       box-sizing: border-box;
     }
+      img{
+      height: 40px;
+      width: 40px;}
 
     nav {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: transparent rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
       padding: 20px 50px;
       display: flex;
       justify-content: space-between;
@@ -89,13 +95,15 @@ function App() {
         text-align: center;
       }
     }
+    
   `
 
   return (
     <BrowserRouter>
       <style>{navStyles}</style>
       <nav>
-        <h2>🏨 Hôtel Kara</h2>
+
+        <h2>  <img src={hotelLogo} alt="Hotel Logo" />Hôtel Kara</h2>
         <ul className="nav-links">
           <li><Link to="/">Réservation</Link></li>
           <li><Link to="/services">Services</Link></li>
