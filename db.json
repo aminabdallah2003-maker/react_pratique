@@ -1,0 +1,157 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "alex",
+      "email": "alex@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "mariame",
+      "email": "mmariam@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "maria",
+      "email": "mmaria@gmail.com"
+    }
+  ],
+  "reservations": [
+    {
+      "id": "1768907745752",
+      "date": 1768907745752,
+      "nomComplet": "gfhjjfj",
+      "numero": "3644",
+      "numeroCNI": "6214",
+      "duree": "3",
+      "statut": "Annulée",
+      "chambre": {
+        "id": 2,
+        "type": "chambre salon",
+        "prix": 80000
+      }
+    },
+    {
+      "id": "1768907873647",
+      "date": 1768907873647,
+      "nomComplet": "amahh",
+      "numero": "90604365",
+      "numeroCNI": "24587",
+      "duree": "9",
+      "statut": "Annulée",
+      "chambre": {
+        "id": 3,
+        "type": "2 chambres salon",
+        "prix": 150000
+      }
+    },
+    {
+      "id": "1768909057995",
+      "date": 1768909057995,
+      "nomComplet": "jdhd",
+      "numero": "4",
+      "numeroCNI": "4",
+      "duree": "05",
+      "statut": "confirmée",
+      "chambre": {
+        "id": 2,
+        "type": "chambre salon",
+        "prix": 80000
+      }
+    },
+    {
+      "id": 1768963158269,
+      "date": 1768963158269,
+      "nomComplet": "amina",
+      "numero": "45",
+      "numeroCNI": "2",
+      "duree": "3",
+      "statut": "en attente",
+      "chambre": {
+        "id": 2,
+        "type": "chambre salon",
+        "prix": 80000
+      }
+    },
+    {
+      "id": 1768963443752,
+      "date": 1768963443752,
+      "nomComplet": "amina",
+      "numero": "4512",
+      "numeroCNI": "4521",
+      "duree": "04",
+      "statut": "en attente",
+      "chambre": {
+        "id": 4,
+        "type": "suite",
+        "prix": 200000
+      }
+    },
+    {
+      "id": 1768963483851,
+      "date": 1768963483851,
+      "nomComplet": "ammmm",
+      "numero": "1",
+      "numeroCNI": "2",
+      "duree": "4",
+      "statut": "en attente",
+      "chambre": {
+        "id": 3,
+        "type": "2 chambres salon",
+        "prix": 150000
+      }
+    },
+    {
+      "id": 1768964504683,
+      "date": 1768964504683,
+      "nomComplet": "in",
+      "numero": "23",
+      "numeroCNI": "23",
+      "duree": "4",
+      "statut": "en attente",
+      "chambre": {
+        "id": 3,
+        "type": "2 chambres salon",
+        "prix": 150000
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "icon": "🛏️",
+      "title": "Chambres Confortables",
+      "description": "Des chambres spacieuses et bien équipées pour votre confort"
+    },
+    {
+      "id": "2",
+      "icon": "🍽️",
+      "title": "Restaurant & Bar",
+      "description": "Cuisine locale et internationale dans un cadre élégant"
+    },
+    {
+      "id": "3",
+      "icon": "🏊",
+      "title": "Piscine",
+      "description": "Profitez de notre belle piscine climatisée"
+    },
+    {
+      "id": "4",
+      "icon": "🧘",
+      "title": "Spa & Wellness",
+      "description": "Massages et soins de relaxation pour votre bien-être"
+    },
+    {
+      "id": "5",
+      "icon": "🎾",
+      "title": "Salle de Sport",
+      "description": "Équipements modernes pour vos entraînements"
+    },
+    {
+      "id": "6",
+      "icon": "📶",
+      "title": "WiFi Gratuit",
+      "description": "Connexion internet haut débit dans tout l'établissement"
+    }
+  ]
+}

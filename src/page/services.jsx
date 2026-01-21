@@ -1,7 +1,20 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import { Link } from 'react-router-dom'
+import api from '../components/api/axios'
 
 const Services = () => {
+  const [ Services, setServices] = useState([])
+      useEffect(()=> {
+      api.get('/services').then (response => {
+        console.log(response)
+        setServices(response.data)
+      })
+    }, [])
+
+
+  
+
+
   const styles = `
     * {
       margin: 0;
@@ -347,25 +360,10 @@ const Services = () => {
     }
   `
 
-  const services = [
-    { id: 1, icon: '🛏️', title: 'Chambres Confortables', description: 'Des chambres spacieuses et bien équipées pour votre confort' },
-    { id: 2, icon: '🍽️', title: 'Restaurant & Bar', description: 'Cuisine locale et internationale dans un cadre élégant' },
-    { id: 3, icon: '🏊', title: 'Piscine', description: 'Profitez de notre belle piscine climatisée' },
-    { id: 4, icon: '🧘', title: 'Spa & Wellness', description: 'Massages et soins de relaxation pour votre bien-être' },
-    { id: 5, icon: '🎾', title: 'Salle de Sport', description: 'Équipements modernes pour vos entraînements' },
-    { id: 6, icon: '📶', title: 'WiFi Gratuit', description: 'Connexion internet haut débit dans tout l\'établissement' },
-  ]
-
-  const amenities = [
-    { id: 1, icon: '🚗', name: 'Parking gratuit' },
-    { id: 2, icon: '🛏️', name: 'Lits King Size' },
-    { id: 3, icon: '❄️', name: 'Climatisation' },
-    { id: 4, icon: '📺', name: 'Télévision écran plat' },
-    { id: 5, icon: '☕', name: 'Mini-bar' },
-    { id: 6, icon: '🛁', name: 'Salle de bain privée' },
-    { id: 7, icon: '🔐', name: 'Coffre-fort' },
-    { id: 8, icon: '🎫', name: 'Service de concierge' },
-  ]
+  
+ 
+  
+  
 
   return (
     <>
@@ -378,7 +376,7 @@ const Services = () => {
 
         <div className="services-content">
           <div className="services-grid">
-            {services.map((service) => (
+            {Services.map((service) => (
               <Link key={service.id} to={`/servicedetails/${service.id}`} style={{ textDecoration: 'none' }}>
                 <div className="service-card">
                   <div className="service-icon">{service.icon}</div>
@@ -387,21 +385,10 @@ const Services = () => {
                     <p>{service.description}</p>
                   </div>
                 </div>
-              </Link>
+              </Link> 
             ))}
           </div>
 
-          <div className="amenities-section">
-            <h2>Équipements & Commodités</h2>
-            <div className="amenities-list">
-              {amenities.map((amenity) => (
-                <div key={amenity.id} className="amenity-item">
-                  <span>{amenity.icon}</span>
-                  <p>{amenity.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
           <div className="contact-section">
             <h2>Des questions sur nos services ?</h2>

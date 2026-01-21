@@ -1,0 +1,24 @@
+  
+
+        { "id": 1, "icon": "🚗", "name": "Parking gratuit" },
+    { "id": 2, "icon": "🛏️", "name": "Lits King Size" },
+    { "id": 3, "icon": "❄️", "name": "Climatisation" },
+    { "id": 4, "icon": "📺", "name": "Télévision écran plat" },
+    { "id": 5, "icon": "☕", "name": "Mini-bar" },
+    { "id": 6, "icon": "🛁", "name": "Salle de bain privée" },
+    { "id": 7, "icon": "🔐", "name": "Coffre-fort" },
+    { "id": 8, "icon": "🎫", "name": "Service de concierge" },
+    ]
+
+
+          <div className="amenities-section">
+            <h2>Équipements & Commodités</h2>
+            <div className="amenities-list">
+              {amenities.map((amenity) => (
+                <div key={amenity.id} className="amenity-item">
+                  <span>{amenity.icon}</span>
+                  <p>{amenity.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>

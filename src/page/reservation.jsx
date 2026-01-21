@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import react, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './../Appli.css'
+import api from '../components/api/axios';
 
 function Reservation() {
  const CHAMBRES = [
@@ -14,10 +15,20 @@ function Reservation() {
   const [numero, setNumero] = useState('');
   const [numeroCNI, setNumeroCNI ] = useState('');
   const [duree, setDuree] = useState(0);
-  const [chambreid, setChambreid] = useState('')
-
-
+  const [chambreid, setChambreid] = useState('');
   const[reservations, setReservations] = useState([])
+
+useEffect(()=> {
+  api.get('/reservations').then (response => {
+    console.log(response)
+    setReservations(response.data)
+  })
+}, [])
+
+
+
+  
+  
 
     function ajouter ({nomComplet,numero,numeroCNI,duree,chambreid}){
         let reservation = {
@@ -47,8 +58,9 @@ function Reservation() {
   return (
     <>
    
-    <h2>formulaire de reservation</h2>
+   <section className='form_reservation'>
     <div className="formulaire">
+       <h2>formulaire de reservation</h2>
       <label htmlFor="nom">Nom Complet</label><br />
       <input type="text" id="nom" placeholder="Nom complet" value={nomComplet} onChange={(event) => 
         setNomComplet(event.target.value)
@@ -85,6 +97,22 @@ function Reservation() {
               alert ('veuillez remplir tous les champs');
               return;
             }
+            api.post('/reservations', {  
+          id: Date.now(),
+          date: Date.now(),
+          nomComplet: nomComplet,
+          numero: numero,
+          numeroCNI: numeroCNI,
+          duree: duree,
+          statut: 'en attente',
+          chambre : CHAMBRES.find((chambre) => chambre.id == chambreid),
+            }).then (response => {setReservations([response.data, ...reservations])
+            })
+              
+
+
+            
+
 
              ajouter ({nomComplet:nomComplet,numero:numero,numeroCNI:numeroCNI,duree:duree,chambreid:chambreid})
 
@@ -97,6 +125,8 @@ function Reservation() {
 
           } }>Reserver</button>
          </div>
+
+   </section>
 
 
 
@@ -118,17 +148,41 @@ function Reservation() {
              <p> {reservation.statut} </p>
             <div>
               <button className='btn1' onClick={()=>{
-                changerStatut({id: reservation.id, nouvautatut: 'confirmée'})
+                
+
+                api.patch('/reservations/' + reservation.id, {"statut": 'confirmée'})
+                .then(response => {
+                  console.log('/reservations/'+ reservation.id,) 
+                  setReservations(reservations.map( r => r.id === reservation.id ? response.data : r))
+                   changerStatut({id: reservation.id, nouvautatut: 'confirmée'})
+                })
+               
+
+              
               }}>confirmer</button>
               <button className='btn2' onClick={()=>{
-                 changerStatut({id: reservation.id, nouvautatut: 'annulée'})
+        api.patch('/reservations/' + reservation.id, {"statut": 'Annulée'})
+                .then(response => {
+                  console.log('/reservations/'+ reservation.id,) 
+                  setReservations(reservations.map( r => r.id === reservation.id ? response.data : r))
+                   changerStatut({id: reservation.id, nouvautatut: 'Annulée'})
+                })
               }}>Annuler</button>
-              <button className='btn3' onClick={() => {
-                if(confirm('Êtes-vous sûr ?')) supprimer(reservation.id)
+              <button className='btn3' onClick={() => { 
+              if(confirm('Êtes-vous sûr ?')) supprimer(reservation.id)
+
+
+              api.delete('/reservations/' + reservation.id)
+                .then (response => {
+                  setReservations(reservations.filter (r => r.id !== reservation.id ? response.data:r))
+                  supprimer(reservation.id)
+                  console.log('rservation suprimée')
+                })
+
                   }}>suprimer</button>
             </div>
             </div>
-
+ 
           )
         })
         }

@@ -223,6 +223,8 @@ const ServiceDetails = () => {
   return (
     <div>
         <h1> {id} </h1>
+        <p> {service.title}</p>
+        <p> {service.description}</p>
     </div>
   )
 }
